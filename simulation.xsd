@@ -1,0 +1,52 @@
+<simulation>
+ <title>Simple Marketing Simulation</title>
+ <sector>Marketing</sector>
+ <scenario>Description of the simulation</scenario>
+ <author id="">Author's name</author>
+ <date value="">Date</date>
+ <revision version="" date=""></revision>
+ <level></level>
+ <documentation uri="">Link</documentation>
+ <participants value=""/>
+ <time period="Daily|Weekly|Monthly|Quarterly|Annual" />
+ <dimensions competitive="True|False" interactive="True|False" deteministic="True|False" tiered="True|False" />
+ <teams value="True|False" allocation="random|determined" maxsize="" minsize="" />
+ <rounds count="" strict="True|False" />
+ <ending type="victory|rounds">
+    <condition type="debt-ratios|market-share|profitability|return-on-assets|return-on-equity|share-price|total-assets"></condition>
+ </ending>
+ <aicompetitor brain="random|competitive|median|follow" />
+ <!-- +/- influence on outcome -->
+ <noise value="" start="" end="" type="" /> 
+ <!--  Unexpected events can happen during the game, like strikes, international currency fluctuations, receiving export orders -->
+ <influences>
+    <influence scale="" source="live|calculated|prepared|random" location="all|step|decision" impact="random|following|leading|rising|declining" start="0" end="100"></influence>
+    <influence scale="" source="live|calculated|prepared|random" location="step" value="" impact="following" start="" end=""></influence>
+    <influence scale="" source="live|calculated|prepared|random" location="decision" value="" impact="leading" start="" end=""></influence>
+    <influence scale="" source="live|calculated|prepared|random" location="" impact="declining|rising" start="" end=""></influence>
+ </influences>
+ <steps type="ordered">
+    <step id="step1" order="1" feedback="hidden|next-step|next-turn">
+        <decision id="decision1.1" type="numeric|choice" formula="formaulaid" />
+        <decision id="decision1.2" type="numeric|choice" formula="formaulatwo" output="_latervarirable" />
+        <hidden id="decision1.3" formula="hiddenformula" method="fixed|random|prepared|calculated" value="0" output="_stilllatervarirable" />
+    </step>
+    <step id="step2" order="2">
+        
+    </step>
+ </steps>
+ <variables>
+    <variable id="_identifier" value="0" type="static|input|generated|calculated" maximum="value" minimum="value" />
+    <variable id="_latervariable" value="0" type="calculated" maximum="value" minimum="value" />
+ </variables>
+ <forumlas>
+   <formula id="formulaid" name="" value="_identifier1*_identifier2" />
+   <formula id="hiddenformula" name="" value="_identifier1+_identifier2" />
+ </forumlas>
+ <reporting>
+    <element type="ranking"></element>
+    <element type="financial"></element>
+    <element type="resource"></element>
+    <element type="sdg"></element>
+ </reporting>
+</simulation> 
